@@ -1,15 +1,15 @@
-- name: install apache2
+- name: install nginx
   apt:
     name:
-      - apache2
+      - nginx
     state: present
     update_cache: yes
     cache_valid_time: 3600
   become: yes
 
-- name: start apache2
+- name: start nginx
   service:
-    name: apache2
+    name: nginx
     state: started
     enabled: yes  # Assurez-vous que nginx démarre au démarrage du système
   become: yes
