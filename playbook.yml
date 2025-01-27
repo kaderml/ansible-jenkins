@@ -1,3 +1,12 @@
+- name: Install Python if not present
+  hosts: all
+  become: yes
+  tasks:
+    - name: Install Python
+      raw: |
+        if ! command -v python3 >/dev/null 2>&1; then
+          apt-get update && apt-get install -y python3
+        fi
 - name: install nginx
   hosts: all
   become: yes
