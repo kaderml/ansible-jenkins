@@ -1,8 +1,5 @@
-
-- name: install apache2
+- name: Install Apache2
   hosts: all
   become: yes
   roles:
-    - apache2
-
-
+    - role: geerlingguy.apache2
